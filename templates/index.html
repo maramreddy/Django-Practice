@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block head_block %}
+    {% if user.is_authenticated %}
+        <li>Hello, {{ user.username }}</li>
+        <li><a href="{% url 'debts_app:user_logout'%}">logout</a></li>
+        <li><a href="{% url 'debts_app:debts_home'%}">debts_home</a></li>
+    {% else %}
+        <li><a href="{% url 'debts_app:register'%}">register</a></li>
+        <li><a href="{% url 'debts_app:user_login'%}">login</a></li>
+    {% endif %}
+{% endblock %}
+{% block body_block %}
+    <h1>Welcome to my Finance world</h1>
+{% endblock %}

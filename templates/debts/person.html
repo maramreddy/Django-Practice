@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load my_extns %}
+{% block body_block %}
+    <h1> All the persons you took loan from </h1>
+    {% for person in persons %}
+        <li> person:</li>
+        <ul> {{ person.name|cutstr:'reddy' }} </ul>
+        <ul> {{ person.email }} </ul>
+        <ul> {{ person.phone }} </ul>
+        <ul> {{ person.address }} </ul>
+    {% endfor %}
+{% endblock %}

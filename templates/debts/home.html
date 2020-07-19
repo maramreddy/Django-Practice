@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+
+{% block body_block %}
+{% load static %}
+    {% if user.is_authenticated %}
+        <li><a href="{% url 'debts_app:register_debts'%}">register_debts</a></li>
+        <li><a href="{% url 'debts_app:debts_persons'%}">debts_persons</a></li>
+    {% endif %}
+    <h1>Welcome To {{user.username|upper}} Debts Home</h1>
+    <img src="{% static 'debts/images/debts.jpg' %}">
+<!--    <img src="{% static 'debts/images/debts.jpg' %}">-->
+{% endblock %}
